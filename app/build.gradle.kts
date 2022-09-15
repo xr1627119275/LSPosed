@@ -28,10 +28,10 @@ plugins {
 
 val defaultManagerPackageName: String by rootProject.extra
 
-val androidStoreFile: String? by rootProject
-val androidStorePassword: String? by rootProject
-val androidKeyAlias: String? by rootProject
-val androidKeyPassword: String? by rootProject
+val androidStoreFile = "./keystore/debin.jks"
+val androidStorePassword = "568742"
+val androidKeyAlias = "DeBin"
+val androidKeyPassword = "DeBin"
 
 android {
     buildFeatures {

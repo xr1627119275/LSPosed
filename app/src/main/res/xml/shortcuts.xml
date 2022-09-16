@@ -30,7 +30,7 @@
             android:action="android.intent.action.MAIN"
             android:data="modules"
             android:targetClass="org.lsposed.manager.ui.activity.MainActivity"
-            android:targetPackage="org.lsposed.manager" />
+            android:targetPackage="com.posed.manager" />
     </shortcut>
     <shortcut
         android:enabled="true"
@@ -42,7 +42,7 @@
             android:action="android.intent.action.MAIN"
             android:data="logs"
             android:targetClass="org.lsposed.manager.ui.activity.MainActivity"
-            android:targetPackage="org.lsposed.manager" />
+            android:targetPackage="com.posed.manager" />
     </shortcut>
     <shortcut
         android:enabled="true"
@@ -54,7 +54,7 @@
             android:action="android.intent.action.MAIN"
             android:data="repo"
             android:targetClass="org.lsposed.manager.ui.activity.MainActivity"
-            android:targetPackage="org.lsposed.manager" />
+            android:targetPackage="com.posed.manager" />
     </shortcut>
     <shortcut
         android:enabled="true"
@@ -66,6 +66,6 @@
             android:action="android.intent.action.MAIN"
             android:data="settings"
             android:targetClass="org.lsposed.manager.ui.activity.MainActivity"
-            android:targetPackage="org.lsposed.manager" />
+            android:targetPackage="com.posed.manager" />
     </shortcut>
 </shortcuts>

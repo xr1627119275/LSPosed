@@ -47,7 +47,7 @@ val commitCount = Git(repo).log().add(refId).call().count()
 val injectedPackageName by extra("com.android.shell")
 val injectedPackageUid by extra(2000)
 
-val defaultManagerPackageName by extra("org.lsposed.manager")
+val defaultManagerPackageName by extra("com.posed.manager")
 val apiCode by extra(93)
 val verCode by extra(commitCount + 4200)
 val verName by extra("1.8.4")

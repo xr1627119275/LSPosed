@@ -18,9 +18,9 @@
  * Copyright (C) 2021 LSPosed Contributors
  */
 
-package de.robv.android.xposed.callbacks;
+package com.debin.android.fun.callbacks;
 
-import de.robv.android.xposed.IXposedHookZygoteInit;
+import com.debin.android.fun.IXposedHookZygoteInit;
 
 /**
  * Interface for objects that can be used to remove callbacks.

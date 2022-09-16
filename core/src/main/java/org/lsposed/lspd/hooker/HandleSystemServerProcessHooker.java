@@ -23,9 +23,9 @@ package org.lsposed.lspd.hooker;
 import org.lsposed.lspd.deopt.PrebuiltMethodsDeopter;
 import org.lsposed.lspd.util.Hookers;
 
-import de.robv.android.xposed.XC_MethodHook;
-import de.robv.android.xposed.XposedBridge;
-import de.robv.android.xposed.XposedHelpers;
+import com.debin.android.fun.XC_MethodHook;
+import com.debin.android.fun.XposedBridge;
+import com.debin.android.fun.XposedHelpers;
 
 // system_server initialization
 public class HandleSystemServerProcessHooker extends XC_MethodHook {

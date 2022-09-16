@@ -22,7 +22,7 @@ package org.lsposed.lspd.util;
 
 import android.os.IBinder;
 
-import de.robv.android.xposed.XposedHelpers;
+import com.debin.android.fun.XposedHelpers;
 
 public class InstallerVerifier {
 

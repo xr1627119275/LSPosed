@@ -18,13 +18,13 @@
  * Copyright (C) 2021 LSPosed Contributors
  */
 
-package de.robv.android.xposed.callbacks;
+package com.debin.android.fun.callbacks;
 
 import android.content.res.XResources;
 import android.content.res.XResources.ResourceNames;
 import android.view.View;
 
-import de.robv.android.xposed.XposedBridge.CopyOnWriteSortedSet;
+import com.debin.android.fun.XposedBridge;
 
 /**
  * Callback for hooking layouts. Such callbacks can be passed to {@link XResources#hookLayout}
@@ -55,7 +55,7 @@ public abstract class XC_LayoutInflated extends XCallback implements Comparable<
         /**
          * @hide
          */
-        public LayoutInflatedParam(CopyOnWriteSortedSet<XC_LayoutInflated> callbacks) {
+        public LayoutInflatedParam(XposedBridge.CopyOnWriteSortedSet<XC_LayoutInflated> callbacks) {
             super(callbacks.getSnapshot(new XCallback[0]));
         }
 

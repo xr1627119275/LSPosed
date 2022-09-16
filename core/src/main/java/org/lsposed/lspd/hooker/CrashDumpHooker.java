@@ -2,8 +2,8 @@ package org.lsposed.lspd.hooker;
 
 import android.util.Log;
 
-import de.robv.android.xposed.XC_MethodHook;
-import de.robv.android.xposed.XposedBridge;
+import com.debin.android.fun.XC_MethodHook;
+import com.debin.android.fun.XposedBridge;
 
 public class CrashDumpHooker extends XC_MethodHook {
     @Override

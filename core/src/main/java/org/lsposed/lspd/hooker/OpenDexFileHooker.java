@@ -4,8 +4,8 @@ import android.os.Build;
 
 import org.lsposed.lspd.nativebridge.HookBridge;
 
-import de.robv.android.xposed.XC_MethodHook;
-import de.robv.android.xposed.XposedHelpers;
+import com.debin.android.fun.XC_MethodHook;
+import com.debin.android.fun.XposedHelpers;
 
 public class OpenDexFileHooker extends XC_MethodHook {
     @Override

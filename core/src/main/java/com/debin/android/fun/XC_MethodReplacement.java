@@ -18,9 +18,9 @@
  * Copyright (C) 2021 LSPosed Contributors
  */
 
-package de.robv.android.xposed;
+package com.debin.android.fun;
 
-import de.robv.android.xposed.callbacks.XCallback;
+import com.debin.android.fun.callbacks.XCallback;
 
 /**
  * A special case of {@link XC_MethodHook} which completely replaces the original method.

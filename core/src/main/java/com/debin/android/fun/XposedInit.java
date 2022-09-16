@@ -18,16 +18,12 @@
  * Copyright (C) 2021 LSPosed Contributors
  */
 
-package de.robv.android.xposed;
+package com.debin.android.fun;
 
 import static org.lsposed.lspd.core.ApplicationServiceClient.serviceClient;
 import static org.lsposed.lspd.deopt.PrebuiltMethodsDeopter.deoptResourceMethods;
-import static de.robv.android.xposed.XposedBridge.hookAllMethods;
-import static de.robv.android.xposed.XposedHelpers.callMethod;
-import static de.robv.android.xposed.XposedHelpers.findAndHookMethod;
-import static de.robv.android.xposed.XposedHelpers.getObjectField;
-import static de.robv.android.xposed.XposedHelpers.getParameterIndexByType;
-import static de.robv.android.xposed.XposedHelpers.setStaticObjectField;
+import static com.debin.android.fun.XposedHelpers.callMethod;
+import static com.debin.android.fun.XposedHelpers.findAndHookMethod;
 
 import android.content.pm.ApplicationInfo;
 import android.content.res.Resources;
@@ -38,6 +34,9 @@ import android.os.Build;
 import android.os.IBinder;
 import android.os.Process;
 import android.util.Log;
+
+import com.debin.android.fun.callbacks.XC_InitPackageResources;
+import com.debin.android.fun.callbacks.XCallback;
 
 import org.lsposed.lspd.models.PreLoadedApk;
 import org.lsposed.lspd.nativebridge.NativeAPI;
@@ -54,8 +53,6 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-import de.robv.android.xposed.callbacks.XC_InitPackageResources;
-import de.robv.android.xposed.callbacks.XCallback;
 import hidden.HiddenApiBridge;
 
 public final class XposedInit {
@@ -78,7 +75,7 @@ public final class XposedInit {
             return;
         }
 
-        findAndHookMethod("android.app.ApplicationPackageManager", null, "getResourcesForApplication",
+        XposedHelpers.findAndHookMethod("android.app.ApplicationPackageManager", null, "getResourcesForApplication",
                 ApplicationInfo.class, new XC_MethodHook() {
                     @Override
                     protected void beforeHookedMethod(MethodHookParam param) {
@@ -120,12 +117,12 @@ public final class XposedInit {
                 // At least on OnePlus 5, the method has an additional parameter compared to AOSP.
                 Object activityToken = null;
                 try {
-                    final int activityTokenIdx = getParameterIndexByType(param.method, IBinder.class);
+                    final int activityTokenIdx = XposedHelpers.getParameterIndexByType(param.method, IBinder.class);
                     activityToken = param.args[activityTokenIdx];
                 } catch (NoSuchFieldError ignored) {
                 }
-                final int resKeyIdx = getParameterIndexByType(param.method, classResKey);
-                String resDir = (String) getObjectField(param.args[resKeyIdx], "mResDir");
+                final int resKeyIdx = XposedHelpers.getParameterIndexByType(param.method, classResKey);
+                String resDir = (String) XposedHelpers.getObjectField(param.args[resKeyIdx], "mResDir");
                 XResources newRes = cloneToXResources(param, resDir);
                 if (newRes == null) {
                     return;
@@ -135,12 +132,12 @@ public final class XposedInit {
                 synchronized (param.thisObject) {
                     ArrayList<Object> resourceReferences;
                     if (activityToken != null) {
-                        Object activityResources = callMethod(param.thisObject, "getOrCreateActivityResourcesStructLocked", activityToken);
+                        Object activityResources = XposedHelpers.callMethod(param.thisObject, "getOrCreateActivityResourcesStructLocked", activityToken);
                         //noinspection unchecked
-                        resourceReferences = (ArrayList<Object>) getObjectField(activityResources, "activityResources");
+                        resourceReferences = (ArrayList<Object>) XposedHelpers.getObjectField(activityResources, "activityResources");
                     } else {
                         //noinspection unchecked
-                        resourceReferences = (ArrayList<Object>) getObjectField(param.thisObject, "mResourceReferences");
+                        resourceReferences = (ArrayList<Object>) XposedHelpers.getObjectField(param.thisObject, "mResourceReferences");
                     }
                     if (activityToken == null || classActivityRes == null) {
                         resourceReferences.add(new WeakReference<>(newRes));
@@ -155,10 +152,10 @@ public final class XposedInit {
         };
 
         for (var createResourceMethod : createResourceMethods) {
-            hookAllMethods(classGTLR, createResourceMethod, hooker);
+            XposedBridge.hookAllMethods(classGTLR, createResourceMethod, hooker);
         }
 
-        findAndHookMethod(TypedArray.class, "obtain", Resources.class, int.class,
+        XposedHelpers.findAndHookMethod(TypedArray.class, "obtain", Resources.class, int.class,
                 new XC_MethodHook() {
                     @Override
                     protected void afterHookedMethod(MethodHookParam param) throws Throwable {
@@ -184,7 +181,7 @@ public final class XposedInit {
                 (ClassLoader) XposedHelpers.getObjectField(Resources.getSystem(), "mClassLoader"));
         HiddenApiBridge.Resources_setImpl(systemRes, (ResourcesImpl) XposedHelpers.getObjectField(Resources.getSystem(), "mResourcesImpl"));
         systemRes.initObject(null);
-        setStaticObjectField(Resources.class, "mSystem", systemRes);
+        XposedHelpers.setStaticObjectField(Resources.class, "mSystem", systemRes);
 
         XResources.init(latestResKey);
     }

@@ -18,13 +18,13 @@
  * Copyright (C) 2021 LSPosed Contributors
  */
 
-package de.robv.android.xposed.callbacks;
+package com.debin.android.fun.callbacks;
 
 import android.content.res.XResources;
 
-import java.util.concurrent.CopyOnWriteArraySet;
+import com.debin.android.fun.IXposedHookInitPackageResources;
 
-import de.robv.android.xposed.IXposedHookInitPackageResources;
+import java.util.concurrent.CopyOnWriteArraySet;
 
 /**
  * This class is only used for internal purposes, except for the {@link InitPackageResourcesParam}

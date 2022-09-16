@@ -26,9 +26,9 @@ import android.util.Log;
 
 import org.lsposed.lspd.util.Hookers;
 
-import de.robv.android.xposed.XC_MethodHook;
-import de.robv.android.xposed.XposedHelpers;
-import de.robv.android.xposed.XposedInit;
+import com.debin.android.fun.XC_MethodHook;
+import com.debin.android.fun.XposedHelpers;
+import com.debin.android.fun.XposedInit;
 
 // when a package is loaded for an existing process, trigger the callbacks as well
 public class LoadedApkCtorHooker extends XC_MethodHook {

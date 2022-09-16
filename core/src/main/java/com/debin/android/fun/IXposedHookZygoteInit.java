@@ -1,4 +1,4 @@
-package de.robv.android.xposed;
+package com.debin.android.fun;
 
 /**
  * Hook the initialization of Zygote process(es), from which all the apps are forked.

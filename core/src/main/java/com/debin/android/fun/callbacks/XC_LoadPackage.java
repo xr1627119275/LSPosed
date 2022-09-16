@@ -18,14 +18,13 @@
  * Copyright (C) 2021 LSPosed Contributors
  */
 
-package de.robv.android.xposed.callbacks;
+package com.debin.android.fun.callbacks;
 
 import android.content.pm.ApplicationInfo;
 
 import java.util.concurrent.CopyOnWriteArraySet;
 
-import de.robv.android.xposed.IXposedHookLoadPackage;
-import de.robv.android.xposed.XposedBridge.CopyOnWriteSortedSet;
+import com.debin.android.fun.IXposedHookLoadPackage;
 
 /**
  * This class is only used for internal purposes, except for the {@link LoadPackageParam}

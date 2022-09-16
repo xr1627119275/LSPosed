@@ -1,4 +1,4 @@
-package de.robv.android.xposed;
+package com.debin.android.fun;
 
 import static org.lsposed.lspd.core.ApplicationServiceClient.serviceClient;
 import android.content.SharedPreferences;

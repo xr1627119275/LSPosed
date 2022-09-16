@@ -36,9 +36,9 @@ import org.lsposed.lspd.service.ILSPApplicationService;
 import org.lsposed.lspd.util.Utils;
 
 import dalvik.system.DexFile;
-import de.robv.android.xposed.XposedBridge;
-import de.robv.android.xposed.XposedHelpers;
-import de.robv.android.xposed.XposedInit;
+import com.debin.android.fun.XposedBridge;
+import com.debin.android.fun.XposedHelpers;
+import com.debin.android.fun.XposedInit;
 
 public class Startup {
     @SuppressWarnings("deprecation")

@@ -1,9 +1,8 @@
-package de.robv.android.xposed;
+package com.debin.android.fun;
 
 import android.app.Application;
 
-import de.robv.android.xposed.callbacks.XC_LoadPackage;
-import de.robv.android.xposed.callbacks.XC_LoadPackage.LoadPackageParam;
+import com.debin.android.fun.callbacks.XC_LoadPackage;
 
 /**
  * Get notified when an app ("Android package") is loaded.
@@ -21,7 +20,7 @@ public interface IXposedHookLoadPackage extends IXposedMod {
      * @param lpparam Information about the app.
      * @throws Throwable Everything the callback throws is caught and logged.
      */
-    void handleLoadPackage(LoadPackageParam lpparam) throws Throwable;
+    void handleLoadPackage(XC_LoadPackage.LoadPackageParam lpparam) throws Throwable;
 
     /** @hide */
     final class Wrapper extends XC_LoadPackage {

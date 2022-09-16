@@ -1,4 +1,4 @@
--keep class de.robv.android.xposed.** {*;}
+-keep class com.debin.android.fun.** {*;}
 -keep class android.** { *; }
 -keepclasseswithmembers,includedescriptorclasses class * {
     native <methods>;

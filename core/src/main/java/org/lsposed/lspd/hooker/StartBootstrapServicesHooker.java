@@ -24,10 +24,10 @@ import static org.lsposed.lspd.util.Utils.logD;
 
 import org.lsposed.lspd.util.Hookers;
 
-import de.robv.android.xposed.XC_MethodHook;
-import de.robv.android.xposed.XposedBridge;
-import de.robv.android.xposed.XposedInit;
-import de.robv.android.xposed.callbacks.XC_LoadPackage;
+import com.debin.android.fun.XC_MethodHook;
+import com.debin.android.fun.XposedBridge;
+import com.debin.android.fun.XposedInit;
+import com.debin.android.fun.callbacks.XC_LoadPackage;
 
 public class StartBootstrapServicesHooker extends XC_MethodHook {
 

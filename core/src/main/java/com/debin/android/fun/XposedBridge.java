@@ -18,12 +18,15 @@
  * Copyright (C) 2021 - 2022 LSPosed Contributors
  */
 
-package de.robv.android.xposed;
+package com.debin.android.fun;
 
 import android.app.ActivityThread;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.util.Log;
+
+import com.debin.android.fun.callbacks.XC_InitPackageResources;
+import com.debin.android.fun.callbacks.XC_LoadPackage;
 
 import org.lsposed.lspd.core.BuildConfig;
 import org.lsposed.lspd.nativebridge.HookBridge;
@@ -41,13 +44,11 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArraySet;
 
-import de.robv.android.xposed.callbacks.XC_InitPackageResources;
-import de.robv.android.xposed.callbacks.XC_LoadPackage;
-
 /**
  * This class contains most of Xposed's central logic, such as initialization and callbacks used by
  * the native side. It also includes methods to add new hooks.
  */
+@SuppressWarnings("JniMissingFunction")
 public final class XposedBridge {
     /**
      * The system class loader which can be used to locate Android framework classes.
@@ -79,7 +80,7 @@ public final class XposedBridge {
 
     public static volatile ClassLoader dummyClassLoader = null;
 
-    private static final String castException = "Return value's type from hook callback does not match the hooked method";
+    private static final ClassCastException castException = new ClassCastException("Return value's type from hook callback does not match the hooked method");
 
     private static final Method getCause;
 
@@ -130,7 +131,6 @@ public final class XposedBridge {
             ResourcesHook.makeInheritable(resClass);
             ResourcesHook.makeInheritable(taClass);
             ClassLoader myCL = XposedBridge.class.getClassLoader();
-            assert myCL != null;
             dummyClassLoader = ResourcesHook.buildDummyClassLoader(myCL.getParent(), resClass.getName(), taClass.getName());
             dummyClassLoader.loadClass("xposed.dummy.XResourcesSuperClass");
             dummyClassLoader.loadClass("xposed.dummy.XTypedArraySuperClass");
@@ -403,7 +403,7 @@ public final class XposedBridge {
             } else {
                 returnType = null;
             }
-            params = new Object[]{
+            params = new Object[] {
                     method,
                     returnType,
                     isStatic,
@@ -499,7 +499,7 @@ public final class XposedBridge {
             else {
                 var result = param.getResult();
                 if (returnType != null && !returnType.isPrimitive() && !HookBridge.instanceOf(result, returnType)) {
-                    throw new ClassCastException(castException);
+                    throw castException;
                 }
                 return result;
             }

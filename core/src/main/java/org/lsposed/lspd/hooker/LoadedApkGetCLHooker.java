@@ -35,11 +35,11 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Map;
 
-import de.robv.android.xposed.XC_MethodHook;
-import de.robv.android.xposed.XC_MethodReplacement;
-import de.robv.android.xposed.XposedBridge;
-import de.robv.android.xposed.XposedHelpers;
-import de.robv.android.xposed.callbacks.XC_LoadPackage;
+import com.debin.android.fun.XC_MethodHook;
+import com.debin.android.fun.XC_MethodReplacement;
+import com.debin.android.fun.XposedBridge;
+import com.debin.android.fun.XposedHelpers;
+import com.debin.android.fun.callbacks.XC_LoadPackage;
 
 public class LoadedApkGetCLHooker extends XC_MethodHook {
     private final LoadedApk loadedApk;

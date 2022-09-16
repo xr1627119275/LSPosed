@@ -18,12 +18,13 @@
  * Copyright (C) 2021 LSPosed Contributors
  */
 
-package de.robv.android.xposed;
+package com.debin.android.fun;
+
+import com.debin.android.fun.callbacks.XCallback;
 
 import java.lang.reflect.Member;
 
-import de.robv.android.xposed.callbacks.IXUnhook;
-import de.robv.android.xposed.callbacks.XCallback;
+import com.debin.android.fun.callbacks.IXUnhook;
 
 /**
  * Callback class for method hooks.

@@ -21,12 +21,12 @@
 package android.content.res;
 
 import static org.lsposed.lspd.nativebridge.ResourcesHook.rewriteXmlReferencesNative;
-import static de.robv.android.xposed.XposedHelpers.decrementMethodDepth;
-import static de.robv.android.xposed.XposedHelpers.findAndHookMethod;
-import static de.robv.android.xposed.XposedHelpers.getBooleanField;
-import static de.robv.android.xposed.XposedHelpers.getLongField;
-import static de.robv.android.xposed.XposedHelpers.getObjectField;
-import static de.robv.android.xposed.XposedHelpers.incrementMethodDepth;
+import static com.debin.android.fun.XposedHelpers.decrementMethodDepth;
+import static com.debin.android.fun.XposedHelpers.findAndHookMethod;
+import static com.debin.android.fun.XposedHelpers.getBooleanField;
+import static com.debin.android.fun.XposedHelpers.getLongField;
+import static com.debin.android.fun.XposedHelpers.getObjectField;
+import static com.debin.android.fun.XposedHelpers.incrementMethodDepth;
 
 import android.content.Context;
 import android.content.pm.PackageParser;
@@ -57,15 +57,15 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.WeakHashMap;
 
-import de.robv.android.xposed.IXposedHookZygoteInit;
-import de.robv.android.xposed.XC_MethodHook;
-import de.robv.android.xposed.XC_MethodHook.MethodHookParam;
-import de.robv.android.xposed.XposedBridge;
-import de.robv.android.xposed.XposedBridge.CopyOnWriteSortedSet;
-import de.robv.android.xposed.XposedInit;
-import de.robv.android.xposed.callbacks.XC_LayoutInflated;
-import de.robv.android.xposed.callbacks.XC_LayoutInflated.LayoutInflatedParam;
-import de.robv.android.xposed.callbacks.XCallback;
+import com.debin.android.fun.IXposedHookZygoteInit;
+import com.debin.android.fun.XC_MethodHook;
+import com.debin.android.fun.XC_MethodHook.MethodHookParam;
+import com.debin.android.fun.XposedBridge;
+import com.debin.android.fun.XposedBridge.CopyOnWriteSortedSet;
+import com.debin.android.fun.XposedInit;
+import com.debin.android.fun.callbacks.XC_LayoutInflated;
+import com.debin.android.fun.callbacks.XC_LayoutInflated.LayoutInflatedParam;
+import com.debin.android.fun.callbacks.XCallback;
 import xposed.dummy.XResourcesSuperClass;
 import xposed.dummy.XTypedArraySuperClass;
 

@@ -61,7 +61,7 @@ public final class XposedBridge {
     /**
      * @hide
      */
-    public static final String TAG = "LSPosed-Bridge";
+    public static final String TAG = "FunXP-Bridge";
 
     /**
      * @deprecated Use {@link #getXposedVersion()} instead.

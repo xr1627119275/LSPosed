@@ -322,7 +322,7 @@ val openApp = task<Exec>("openApp") {
         "android.intent.action.MAIN",
         "-c",
         "com.posed.manager.LAUNCH_MANAGER",
-        "com.android.phone/.BugreportWarningActivity"
+        "com.android.shell/.BugreportWarningActivity"
     )
 }
 task<Exec>("reRunApp") {

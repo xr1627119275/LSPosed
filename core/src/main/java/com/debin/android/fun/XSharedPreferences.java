@@ -60,7 +60,7 @@ import com.debin.android.fun.services.FileResult;
  * compatible with all ROMs.
  */
 public final class XSharedPreferences implements SharedPreferences {
-    private static final String TAG = "XSharedPreferences";
+    private static final String TAG = "FunSharedPreferences";
     private static final HashMap<WatchKey, PrefsData> sWatcherKeyInstances = new HashMap<>();
     private static final Object sContent = new Object();
     private static Thread sWatcherDaemon = null;

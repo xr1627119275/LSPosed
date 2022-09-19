@@ -43,7 +43,7 @@ import java.util.concurrent.Executors;
 import hidden.HiddenApiBridge;
 
 public class ServiceManager {
-    public static final String TAG = "LSPosedService";
+    public static final String TAG = "FunXPService";
     private static final ConcurrentHashMap<String, LSPModuleService> moduleServices = new ConcurrentHashMap<>();
     private static final File globalNamespace = new File("/proc/1/root");
     @SuppressWarnings("FieldCanBeLocal")

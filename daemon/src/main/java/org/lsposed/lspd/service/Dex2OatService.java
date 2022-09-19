@@ -53,7 +53,7 @@ public class Dex2OatService {
 
     public static final String PROP_NAME = "dalvik.vm.dex2oat-flags";
     public static final String PROP_VALUE = "--inline-max-code-units=0";
-    private static final String TAG = "LSPosedDex2Oat";
+    private static final String TAG = "FunXPDex2Oat";
 
     private String devTmpDir, magiskPath, fakeBin32, fakeBin64;
     private String[] dex2oatBinaries;

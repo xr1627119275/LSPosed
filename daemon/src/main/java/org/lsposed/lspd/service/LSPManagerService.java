@@ -88,7 +88,7 @@ import rikka.parcelablelist.ParcelableListSlice;
 public class LSPManagerService extends ILSPManagerService.Stub {
     // this maybe useful when obtaining the manager binder
     private static String RANDOM_UUID = null;
-    private static final String SHORTCUT_ID = "org.lsposed.manager.shortcut";
+    private static final String SHORTCUT_ID = "com.posed.manager.shortcut";
     public static final String CHANNEL_ID = "lsposed";
     public static final String CHANNEL_NAME = "LSPosed Manager";
     public static final int CHANNEL_IMP = NotificationManager.IMPORTANCE_HIGH;
@@ -201,7 +201,7 @@ public class LSPManagerService extends ILSPManagerService.Stub {
                 }
                 if (intent != null) {
                     if (intent.getCategories() != null) intent.getCategories().clear();
-                    intent.addCategory("org.lsposed.manager.LAUNCH_MANAGER");
+                    intent.addCategory("com.posed.manager.LAUNCH_MANAGER");
                     intent.setPackage(BuildConfig.MANAGER_INJECTED_PKG_NAME);
                     managerIntent = (Intent) intent.clone();
                 }
@@ -323,7 +323,7 @@ public class LSPManagerService extends ILSPManagerService.Stub {
 
     @SuppressLint("WrongConstant")
     public static void broadcastIntent(Intent inIntent) {
-        var intent = new Intent("org.lsposed.manager.NOTIFICATION");
+        var intent = new Intent("com.posed.manager.NOTIFICATION");
         intent.putExtra(Intent.EXTRA_INTENT, inIntent);
         intent.addFlags(0x01000000); //Intent.FLAG_RECEIVER_INCLUDE_BACKGROUND
         intent.addFlags(0x00400000); //Intent.FLAG_RECEIVER_FROM_SHELL
@@ -463,7 +463,7 @@ public class LSPManagerService extends ILSPManagerService.Stub {
             Log.d(TAG, "starting target app of parasitic manager");
             // check if it's launching our manager
             if (intent.getCategories() != null &&
-                    intent.getCategories().contains("org.lsposed.manager.LAUNCH_MANAGER")) {
+                    intent.getCategories().contains("com.posed.manager.LAUNCH_MANAGER")) {
                 Log.d(TAG, "requesting launch of manager");
                 // a new launch for the manager
                 // check if there's one running

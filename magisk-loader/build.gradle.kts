@@ -121,7 +121,7 @@ dependencies {
 }
 
 val zipAll = task("zipAll") {
-    group = "LSPosed"
+    group = "FunXP"
 
 }
 

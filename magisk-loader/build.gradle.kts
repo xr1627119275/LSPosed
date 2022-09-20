@@ -28,7 +28,7 @@ plugins {
     id("com.android.application")
 }
 
-val moduleName = "LSPosed"
+val moduleName = "FunXP"
 val moduleBaseId = "lsposed"
 val authors = "LSPosed Developers"
 

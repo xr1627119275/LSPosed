@@ -29,10 +29,10 @@ plugins {
 }
 
 val moduleName = "FunXP"
-val moduleBaseId = "lsposed"
+val moduleBaseId = "funxp"
 val authors = "LSPosed Developers"
 
-val riruModuleId = "lsposed"
+val riruModuleId = "funxp"
 val moduleMinRiruApiVersion = 25
 val moduleMinRiruVersionName = "25.0.1"
 val moduleMaxRiruApiVersion = 25

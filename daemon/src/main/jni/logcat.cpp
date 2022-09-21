@@ -291,7 +291,7 @@ void Logcat::Run() {
     RefreshFd(true);
     RefreshFd(false);
 
-    EnsureLogWatchDog();
+    // EnsureLogWatchDog();
 
     while (true) {
         std::unique_ptr<logger_list, decltype(&android_logger_list_free)> logger_list{

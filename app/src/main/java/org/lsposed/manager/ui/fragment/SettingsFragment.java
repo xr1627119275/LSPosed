@@ -190,7 +190,7 @@ public class SettingsFragment extends BaseFragment {
                     LocalDateTime now = LocalDateTime.now();
                     try {
                         backupLauncher.launch(String.format(LocaleDelegate.getDefaultLocale(),
-                                "LSPosed_%s.lsp", now.toString()));
+                                "FunXP_%s.lsp", now.toString()));
                         return true;
                     } catch (ActivityNotFoundException e) {
                         parentFragment.showHint(R.string.enable_documentui, true);

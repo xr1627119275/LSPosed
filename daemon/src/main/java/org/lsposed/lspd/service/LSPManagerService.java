@@ -89,8 +89,8 @@ public class LSPManagerService extends ILSPManagerService.Stub {
     // this maybe useful when obtaining the manager binder
     private static String RANDOM_UUID = null;
     private static final String SHORTCUT_ID = "org.lsposed.manager.shortcut";
-    public static final String CHANNEL_ID = "lsposed";
-    public static final String CHANNEL_NAME = "LSPosed Manager";
+    public static final String CHANNEL_ID = "funxp";
+    public static final String CHANNEL_NAME = "FunXP Manager";
     public static final int CHANNEL_IMP = NotificationManager.IMPORTANCE_HIGH;
 
     private static final HashMap<String, Integer> notificationIds = new HashMap<>();
@@ -289,7 +289,7 @@ public class LSPManagerService extends ILSPManagerService.Stub {
                     .setAutoCancel(true)
                     .setStyle(style)
                     .build();
-            notification.extras.putString("android.substName", "LSPosed");
+            notification.extras.putString("android.substName", "FunXP");
             var im = INotificationManager.Stub.asInterface(android.os.ServiceManager.getService("notification"));
             final NotificationChannel channel =
                     new NotificationChannel(CHANNEL_ID, CHANNEL_NAME, CHANNEL_IMP);
@@ -369,8 +369,8 @@ public class LSPManagerService extends ILSPManagerService.Stub {
             var settingIntent = PackageService.getLaunchIntentForPackage("com.android.settings");
             var componentName = settingIntent != null ? settingIntent.getComponent() : new ComponentName("com.android.settings", "android.__dummy__");
             var shortcut = new ShortcutInfo.Builder(context, SHORTCUT_ID)
-                    .setShortLabel("LSPosed")
-                    .setLongLabel("LSPosed")
+                    .setShortLabel("FunXP")
+                    .setLongLabel("FunXP")
                     .setIntent(intent)
                     .setActivity(componentName)
                     .setCategories(intent.getCategories())

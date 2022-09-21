@@ -39,7 +39,7 @@ namespace lspd {
         jstring nice_name = nullptr;
 
         void onModuleLoaded() {
-            LOGI("onModuleLoaded: welcome to LSPosed!");
+            LOGI("onModuleLoaded: welcome to FunXP!");
             LOGI("onModuleLoaded: version v{} ({})", versionName, versionCode);
             InitSymbolCache(nullptr);
             MagiskLoader::Init();

@@ -149,7 +149,7 @@ namespace lspd {
 
     std::string GetBridgeServiceName() {
         const auto &obfs_map = ConfigBridge::GetInstance()->obfuscation_map();
-        static auto signature = obfs_map.at("org.lsposed.lspd.service.") + "BridgeService";
+        static auto signature = obfs_map.at("com.posed.lspd.service.") + "BridgeService";
         return signature;
     }
 

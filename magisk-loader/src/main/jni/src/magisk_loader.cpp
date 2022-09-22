@@ -75,7 +75,7 @@ namespace lspd {
 
     std::string GetEntryClassName() {
         const auto &obfs_map = ConfigBridge::GetInstance()->obfuscation_map();
-        static auto signature = obfs_map.at("org.lsposed.lspd.core.") + "Main";
+        static auto signature = obfs_map.at("com.posed.lspd.core.") + "Main";
         return signature;
     }
 

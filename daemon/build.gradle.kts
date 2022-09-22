@@ -42,7 +42,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "org.lsposed.daemon"
+        applicationId = "com.posed.daemon"
 
         buildConfigField("int", "API_CODE", "$apiCode")
         buildConfigField(
@@ -82,7 +82,7 @@ android {
             }
         }
     }
-    namespace = "org.lsposed.daemon"
+    namespace = "com.posed.daemon"
 }
 
 fun afterEval() = android.applicationVariants.forEach { variant ->
@@ -91,7 +91,7 @@ fun afterEval() = android.applicationVariants.forEach { variant ->
 
     val app = rootProject.project(":app").extensions.getByName<BaseExtension>("android")
     val outSrcDir = file("$buildDir/generated/source/signInfo/${variantLowered}")
-    val outSrc = file("$outSrcDir/org/lsposed/lspd/util/SignInfo.java")
+    val outSrc = file("$outSrcDir/com/posed/lspd/util/SignInfo.java")
     val signInfoTask = tasks.register("generate${variantCapped}SignInfo") {
         dependsOn(":app:validateSigning${variantCapped}")
         outputs.file(outSrc)
@@ -107,7 +107,7 @@ fun afterEval() = android.applicationVariants.forEach { variant ->
             )
             PrintStream(outSrc).print(
                 """
-                |package org.lsposed.lspd.util;
+                |package com.posed.lspd.util;
                 |public final class SignInfo {
                 |    public static final byte[] CERTIFICATE = {${
                     certificateInfo.certificate.encoded.joinToString(",")

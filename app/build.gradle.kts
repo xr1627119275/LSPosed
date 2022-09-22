@@ -90,13 +90,13 @@ android {
             }
         }
     }
-    namespace = "org.lsposed.manager"
+    namespace = "com.posed.manager"
 }
 
 autoResConfig {
     generateClass.set(true)
     generateRes.set(false)
-    generatedClassFullName.set("org.lsposed.manager.util.LangList")
+    generatedClassFullName.set("com.posed.manager.util.LangList")
     generatedArrayFirstItem.set("SYSTEM")
 }
 

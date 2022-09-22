@@ -20,8 +20,8 @@
 
 package com.debin.android.fun;
 
-import static org.lsposed.lspd.core.ApplicationServiceClient.serviceClient;
-import static org.lsposed.lspd.deopt.PrebuiltMethodsDeopter.deoptResourceMethods;
+import static com.posed.lspd.core.ApplicationServiceClient.serviceClient;
+import static com.posed.lspd.deopt.PrebuiltMethodsDeopter.deoptResourceMethods;
 import static com.debin.android.fun.XposedHelpers.callMethod;
 import static com.debin.android.fun.XposedHelpers.findAndHookMethod;
 
@@ -38,10 +38,10 @@ import android.util.Log;
 import com.debin.android.fun.callbacks.XC_InitPackageResources;
 import com.debin.android.fun.callbacks.XCallback;
 
-import org.lsposed.lspd.models.PreLoadedApk;
-import org.lsposed.lspd.nativebridge.NativeAPI;
-import org.lsposed.lspd.nativebridge.ResourcesHook;
-import org.lsposed.lspd.util.LspModuleClassLoader;
+import com.posed.lspd.models.PreLoadedApk;
+import com.posed.lspd.nativebridge.NativeAPI;
+import com.posed.lspd.nativebridge.ResourcesHook;
+import com.posed.lspd.util.LspModuleClassLoader;
 
 import java.io.File;
 import java.lang.ref.WeakReference;

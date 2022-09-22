@@ -24,7 +24,7 @@ plugins {
 }
 
 android {
-    namespace = "org.lsposed.lspd.core"
+    namespace = "com.posed.lspd.core"
 
     buildFeatures {
         androidResources = false

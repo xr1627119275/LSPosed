@@ -1,10 +1,10 @@
--keepclasseswithmembers class org.lsposed.lspd.core.Main {
+-keepclasseswithmembers class com.posed.lspd.core.Main {
     public static void forkCommon(boolean, java.lang.String, android.os.IBinder);
 }
 -keepclasseswithmembers,includedescriptorclasses class * {
     native <methods>;
 }
--keepclasseswithmembers class org.lsposed.lspd.service.BridgeService {
+-keepclasseswithmembers class com.posed.lspd.service.BridgeService {
     public static boolean *(android.os.IBinder, int, long, long, int);
 }
 

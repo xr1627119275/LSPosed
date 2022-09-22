@@ -53,7 +53,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "org.lsposed.lspd"
+        applicationId = "com.posed.lspd"
         multiDexEnabled = false
 
         buildConfigField("int", "API_CODE", "$apiCode")
@@ -108,7 +108,7 @@ android {
             }
         }
     }
-    namespace = "org.lsposed.lspd"
+    namespace = "com.posed.lspd"
 }
 
 dependencies {
@@ -300,7 +300,7 @@ val reRunDaemon = task<Exec>("reRunDaemon") {
         "ASH_STANDALONE=1",
         "su",
         "-pc",
-        "/data/adb/magisk/busybox sh /data/adb/modules/*_lsposed/service.sh --system-server-max-retry=-1&"
+        "/data/adb/magisk/busybox sh /data/adb/modules/*_funxp/service.sh --system-server-max-retry=-1&"
     )
     isIgnoreExitValue = true
 }
@@ -321,7 +321,7 @@ val openApp = task<Exec>("openApp") {
         "-a",
         "android.intent.action.MAIN",
         "-c",
-        "org.lsposed.manager.LAUNCH_MANAGER",
+        "com.posed.manager.LAUNCH_MANAGER",
         "com.android.shell/.BugreportWarningActivity"
     )
 }

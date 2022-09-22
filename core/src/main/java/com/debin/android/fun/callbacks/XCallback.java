@@ -22,7 +22,7 @@ package com.debin.android.fun.callbacks;
 
 import android.os.Bundle;
 
-import org.lsposed.lspd.deopt.PrebuiltMethodsDeopter;
+import com.posed.lspd.deopt.PrebuiltMethodsDeopter;
 
 import java.io.Serializable;
 

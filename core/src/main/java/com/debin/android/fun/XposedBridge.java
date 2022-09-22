@@ -28,9 +28,9 @@ import android.util.Log;
 import com.debin.android.fun.callbacks.XC_InitPackageResources;
 import com.debin.android.fun.callbacks.XC_LoadPackage;
 
-import org.lsposed.lspd.core.BuildConfig;
-import org.lsposed.lspd.nativebridge.HookBridge;
-import org.lsposed.lspd.nativebridge.ResourcesHook;
+import com.posed.lspd.core.BuildConfig;
+import com.posed.lspd.nativebridge.HookBridge;
+import com.posed.lspd.nativebridge.ResourcesHook;
 
 import java.lang.reflect.AccessibleObject;
 import java.lang.reflect.Executable;

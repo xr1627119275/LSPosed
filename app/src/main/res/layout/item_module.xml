@@ -79,7 +79,7 @@
             app:layout_constraintStart_toStartOf="@id/app_name"
             app:layout_constraintTop_toBottomOf="@id/app_name"
             app:layout_constraintWidth_max="wrap"
-            tools:text="com.lsposed.manager" />
+            tools:text="com.posed.manager" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/app_Version_Name"
@@ -99,7 +99,7 @@
             app:layout_constraintWidth_max="wrap"
             tools:text="Version :1.8.1" />
 
-        <org.lsposed.manager.ui.widget.ExpandableTextView
+        <com.posed.manager.ui.widget.ExpandableTextView
             android:id="@+id/description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

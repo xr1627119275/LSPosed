@@ -111,7 +111,7 @@ inline int UnhookFunction(void *original) {
 
 inline std::string GetNativeBridgeSignature() {
     const auto &obfs_map = ConfigBridge::GetInstance()->obfuscation_map();
-    static auto signature = obfs_map.at("org.lsposed.lspd.nativebridge.");
+    static auto signature = obfs_map.at("com.posed.lspd.nativebridge.");
     return signature;
 }
 

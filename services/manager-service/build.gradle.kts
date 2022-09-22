@@ -31,7 +31,7 @@ android {
             isMinifyEnabled = false
         }
     }
-    namespace = "org.lsposed.lspd.managerservice"
+    namespace = "com.posed.lspd.managerservice"
 }
 
 dependencies {

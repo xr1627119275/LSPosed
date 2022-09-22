@@ -1,6 +1,6 @@
 package com.debin.android.fun;
 
-import static org.lsposed.lspd.core.ApplicationServiceClient.serviceClient;
+import static com.posed.lspd.core.ApplicationServiceClient.serviceClient;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.RemoteException;

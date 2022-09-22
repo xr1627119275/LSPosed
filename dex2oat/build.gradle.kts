@@ -22,7 +22,7 @@ plugins {
 }
 
 android {
-    namespace = "org.lsposed.dex2oat"
+    namespace = "com.posed.dex2oat"
 
     buildFeatures {
         androidResources = false

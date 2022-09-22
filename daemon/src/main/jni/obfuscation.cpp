@@ -147,7 +147,7 @@ jobject stringMapToJavaHashMap(JNIEnv *env, const decltype(signatures)& map) {
 
 extern "C"
 JNIEXPORT jobject JNICALL
-Java_org_lsposed_lspd_service_ObfuscationManager_getSignatures(JNIEnv *env, [[maybe_unused]] jclass obfuscation_manager) {
+Java_com_posed_lspd_service_ObfuscationManager_getSignatures(JNIEnv *env, [[maybe_unused]] jclass obfuscation_manager) {
     maybeInit(env);
     static jobject signatures_jni = nullptr;
     if (signatures_jni) return signatures_jni;
@@ -186,7 +186,7 @@ static int obfuscateDex(const void *dex, size_t size) {
 
 extern "C"
 JNIEXPORT jobject
-Java_org_lsposed_lspd_service_ObfuscationManager_obfuscateDex(JNIEnv *env, [[maybe_unused]] jclass obfuscation_manager,
+Java_com_posed_lspd_service_ObfuscationManager_obfuscateDex(JNIEnv *env, [[maybe_unused]] jclass obfuscation_manager,
                                                        jobject memory) {
     maybeInit(env);
     int fd = ASharedMemory_dupFromJava(env, memory);

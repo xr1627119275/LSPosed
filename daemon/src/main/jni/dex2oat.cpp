@@ -47,7 +47,7 @@ char kTmpDir[] = "placeholder_/dev/0123456789abcdef\0";
 
 extern "C"
 JNIEXPORT void JNICALL
-Java_org_lsposed_lspd_service_Dex2OatService_initNative(JNIEnv *env, jobject thiz) {
+Java_com_posed_lspd_service_Dex2OatService_initNative(JNIEnv *env, jobject thiz) {
     char magisk_path[PATH_MAX], cwd[PATH_MAX], *module_name;
     FILE *fp = popen("magisk --path", "r");
     fscanf(fp, "%s", magisk_path);
@@ -111,7 +111,7 @@ Java_org_lsposed_lspd_service_Dex2OatService_initNative(JNIEnv *env, jobject thi
 
 extern "C"
 JNIEXPORT void JNICALL
-Java_org_lsposed_lspd_service_Dex2OatService_setEnabled(JNIEnv *env, jobject thiz, jboolean enabled) {
+Java_com_posed_lspd_service_Dex2OatService_setEnabled(JNIEnv *env, jobject thiz, jboolean enabled) {
     if (vfork() == 0) {
         int ns = open("/proc/1/ns/mnt", O_RDONLY);
         setns(ns, CLONE_NEWNS);
